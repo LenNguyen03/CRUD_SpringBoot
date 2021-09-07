@@ -5,6 +5,7 @@ import com.example.spring_data_pja_pr.repository.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringDataPjaPrApplication {
@@ -13,7 +14,8 @@ public class SpringDataPjaPrApplication {
         SpringApplication.run(SpringDataPjaPrApplication.class, args);
     }
 
-    private CommandLineRunner run(EmployeeRepository employeeRepository){
+    @Bean
+    public CommandLineRunner run(EmployeeRepository employeeRepository){
         return args -> {
             insertEmployee(employeeRepository);
         };
