@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SpringDataPjaPrApplication {
 
@@ -14,21 +16,20 @@ public class SpringDataPjaPrApplication {
         SpringApplication.run(SpringDataPjaPrApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner run(EmployeeRepository employeeRepository){
-        return args -> {
-            insertEmployee(employeeRepository);
-        };
-    }
-    private void insertEmployee(EmployeeRepository employeeRepository){
-        Employee employee = Employee.builder()
-                .firstName("Van")
-                .lastName("Hung")
-                .email("hungvan@gmail.com")
-                .build();
-        employeeRepository.save(employee);
-
-    }
+//    @Bean
+//    public CommandLineRunner run(EmployeeRepository employeeRepository){
+//        return args -> {
+//            insertEmployee(employeeRepository);
+//        };
+//    }
+//    private void insertEmployee(EmployeeRepository employeeRepository){
+//        Employee employee = Employee.builder()
+//                .firstName("Van")
+//                .lastName("Hung")
+//                .email("hungvan@gmail.com")
+//                .build();
+//        employeeRepository.save(employee);
+//    }
 
 
 
